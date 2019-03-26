@@ -1,0 +1,208 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.1"
+        id        = "com.northbristolarts2018.trail.app"
+        versionCode = "2" 
+        version   = "1.0.2">
+    
+    <!--
+        id for use with iOS:
+            id        = "co.uk.cactus.NBATrail"
+        id for use with Android:
+            id        = "com.northbristolarts2017.trail.app"
+    -->
+    
+    <!-- versionCode is optional and is Android only. I think this relatest to the internal version number that Android requires to be an integer. This is used to determine version sequence and therefore whether or not a new version constitutes an update. The version value (standard versioning format) is displayed to the user. -->
+
+    <name>NBA Trail</name>
+
+    <description>
+        Welcome to the North Bristol Arts Trail.
+    </description>
+
+    <author href="http://www.cactus.co.uk" email="app_support@cactus.co.uk">
+        Cactus, Bristol, UK
+    </author>
+
+    <platform name="android" />
+    <!--platform name="ios" /-->
+    
+	    <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+    <!--preference name="permissions"                value="none"/-->
+
+    <!-- Customize your app and platform with the preference element. -->
+    <preference name="phonegap-version"           value="cli-6.5.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+    <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+    <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+    <!--preference name="ios-statusbarstyle"         value="black-opaque" /-->   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+    <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
+    <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+    <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+    <preference name="android-targetSdkVersion" value="26"/>
+
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+	
+    <!--gap:plugin name="org.apache.cordova.battery-status" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" /-->
+    <!--gap:plugin name="org.apache.cordova.device-orientation" /-->
+    <!--gap:plugin name="org.apache.cordova.dialogs" /-->
+    <!-- dialogs plugin removed 20161018 due to error with Phonegap cli-6.3.0 -->
+    <!--gap:plugin name="org.apache.cordova.file" /-->
+    <!--gap:plugin name="org.apache.cordova.file-transfer" /-->
+	<!--gap:plugin name="org.apache.cordova.geolocation" /-->
+	<!--gap:plugin name="org.apache.cordova.globalization" /-->
+    <!--gap:plugin name="org.apache.cordova.inappbrowser" /-->
+    <!--gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.vibration" /-->
+    
+    <!-- 20161018 Attempt at upgrading to new style plugins -->
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.3.0" />
+    <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.4.0" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.5.0" />
+    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.4" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~4.3.0" />
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.6.0" />
+    <plugin name="cordova-plugin-media" source="npm" spec="~2.4.0" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.2" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.2" />
+        <!-- Allow geo: links to open maps -->
+        <allow-intent href="geo:*" />
+
+    <!-- Third party plugins -->
+    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    <!--
+        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    -->
+
+    <!-- Define app icon for each platform. This is a relative path to config.xml.
+        For e.g. if you place an icon.png inside res folder, you should modify the
+        src in the following setting to "res/icon.png" -->
+    <icon src="icon.png" />
+    
+    <!-- ANDROID ICONS info here: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html -->
+    
+    <icon src="res/icon/android/ldpi.png" gap:platform="android" gap:qualifier="ldpi" /> <!-- 36px -->
+    <icon src="res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" /> <!-- 48px -->
+    <icon src="res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" /> <!-- 72px -->
+    <icon src="res/icon/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" /> <!-- 96px -->
+    <icon src="res/icon/android/xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" /> <!-- 144px -->
+    <icon src="res/icon/android/xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi" /> <!-- 192px -->
+	<!--
+    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
+    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
+
+
+	-->
+    <!--icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="res/icon/ios/icon-60.png"            gap:platform="ios"        width="60" height="60" />
+    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="res/icon/ios/icon-76.png"            gap:platform="ios"        width="76" height="76" />
+    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="res/icon/ios/icon-60@2x.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-60@3x.png"         gap:platform="ios"        width="180" height="180" />
+    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="res/icon/ios/icon-120.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-152.png"         gap:platform="ios"        width="152" height="152" /-->
+	<!--
+    <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
+    <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+	-->
+
+    <!-- Define app splash screen for each platform. -->
+	<!--
+    
+    <gap:splash src="res/splash/blackberry/screen-225.png"              gap:platform="blackberry" /-->
+    
+    <gap:splash src="res/splash/android/portrait-ldpi.png" gap:platform="android" gap:qualifier="ldpi" /> <!-- 200 x 320 -->
+    <gap:splash src="res/splash/android/portrait-mdpi.png" gap:platform="android" gap:qualifier="mdpi" /> <!-- 320 x 480 -->
+    <gap:splash src="res/splash/android/portrait-hdpi.png" gap:platform="android" gap:qualifier="hdpi" /> <!-- 480 x 800 -->
+    <gap:splash src="res/splash/android/portrait-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" /> <!-- 720 x 1280 -->
+    <gap:splash src="res/splash/android/portrait-xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" /> <!-- 960 x 1600 -->
+    <gap:splash src="res/splash/android/portrait-xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi" /> <!-- 1280 x 1920 -->
+    <!-- Android splash screens are all portrait images only. These will be used for portrait or landscape app startup as we don't really care enough to bloat the app with separate landscape images. Below is an example of how to set separate portrait and landscape splash screens images.
+    <gap:splash src="res/splash/android/portrait-xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi" />
+    -->
+    
+    
+    <!--gap:splash src="res/splash/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/splash/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/splash/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="res/splash/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" /-->
+    <!--gap:splash src="res/splash/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="res/splash/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
+	-->
+
+    <!--
+        Define access to external domains.
+
+        <access />            - a blank access tag denies access to all external resources.
+        <access origin="*" /> - a wildcard access tag allows access to all external resource.
+
+        Otherwise, you can specify specific domains:
+    -->
+    	<access origin="*" />
+
+        <!-- Allow links to example.com -->
+        <allow-navigation href="http://*.com/*" />
+
+        <!-- Wildcards are allowed for the protocol, as a prefix
+             to the host, or as a suffix to the path -->
+        <allow-navigation href="*://*.*.com/*" />
+
+        <!-- A wildcard can be used to whitelist the entire network,
+             over HTTP and HTTPS.
+             *NOT RECOMMENDED* -->
+        <allow-navigation href="*" />
+
+        <!-- The above is equivalent to these three declarations -->
+        <allow-navigation href="http://*/*" />
+        <allow-navigation href="https://*/*" />
+        <allow-navigation href="data:*" />
+
+
+    <!--
+        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
+        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
+        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+	-->
+	
+	
+		<!--feature name="InAppBrowser">
+			<param name="ios-package" value="CDVInAppBrowser" />
+		</feature-->
+
+	
+	
+	
+	<!--
+	<preference name="stay-in-webview" value="false" />
+	<feature name="Geolocation">
+	    <param name="ios-package" value="CDVLocation" />
+	</feature>
+	-->
+
+</widget>

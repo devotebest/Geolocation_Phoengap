@@ -1,0 +1,51 @@
+<div data-options="dxView : { name: 'map_page', title: 'North Bristol Arts' }" >
+    <div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
+		<!--div data-bind="dxScrollView:{ }, dxAction: function() { alert('This is the map, key to the whole app!'); }">
+			<img src="images/map.jpg" />
+    	</div-->
+		<!--div class="mapTypeSwitch">
+			<div data-bind="dxTabs: { dataSource: mapTypes, itemClickAction: tabClicked, selectedIndex: 1 }"></div>
+		</div-->
+		<!--div id="trail_count" class="counter">
+			<p data-bind="text: trail_count"></p>
+		</div-->
+		<!--div id="hunt_count" class="counter">
+			<p data-bind="text: hunt_count"></p>
+		</div-->
+        <div data-bind="html: map_infobar"></div>
+        
+        
+		<div id="location_toggle" data-bind="dxAction: getCurrentLocation"><i class="fa fa-location-arrow icon-margin-left icon-margin-right sba_blue location_toggle_icon" id="location_toggle_icon"></i></div>
+		<div class="map" id="map" data-bind="dxMap: {
+		  location: initial_location,
+		  zoom: mapZoom,
+		  provider: 'google',
+		  width: '100%',
+		  height: '100%',
+		  type: currentMapType,
+		  disableDefaultUI: true,
+		  readyAction: onReadyAction,
+          key: 'AIzaSyCpkNh22jzvSKKRE3DQXRdckOTqNDgIMEA' 
+		}">
+		</div>
+	</div>
+</div>
+
+<!--div class="map" id="map_2" data-bind="dxMap: {
+		  location: initial_location_2,
+		  zoom: mapZoom_2,
+		  provider: 'google',
+		  width: '100%',
+		  height: '100%',
+		  type: currentMapType,
+		  disableDefaultUI: true,
+		  readyAction: onReadyAction,
+          key: 'AIzaSyClknrvL7KLVR57RhjKrLeuwvEF-Tnbq5k' jon@cactus maybe?
+		}">
+
+
+          key: 'AIzaSyBxdShMvEkVbV2yYGx4-gU3A3DYNesucKQ' jon.rolfe
+
+        AIzaSyDpeOhQpGbXZRNYjOgbLSOJejdgC8HiIgc 2017 version
+		</div-->
+

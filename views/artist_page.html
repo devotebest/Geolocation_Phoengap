@@ -1,0 +1,23 @@
+
+<div data-options="dxView : { name: 'artist_page', title: 'Artist profile' } " >
+    <div class="artist_page" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxScrollView: {}">
+			<div id="trail_location_info">
+	            <h1 data-bind="html: pageContents.name" class="sba_blue"></h1>
+                <div class="button_holder"><i class="fa fa-map-marker sba_pink"></i>
+			        <div data-bind="dxButton: { text: location_name_link_back, clickAction: '#_back' }" class="btnReturnToMap" id="btnReturnToMap"></div>
+				</div>
+	            <div data-bind="html: url" class="center contact_info"></div>
+	            <div data-bind="html: instagram" class="center contact_info"></div>
+	            <div data-bind="html: twitter" class="center contact_info"></div>
+	            <div data-bind="html: facebook" class="center contact_info"></div>
+	            <div data-bind="html: email" class="center contact_info"></div>
+	            <div data-bind="html: phone" class="center contact_info"></div>
+				<div data-bind="html: main_pic" class="title_image article-pix"></div>
+				<div data-bind="html: description" class="artist_description"></div>
+				<div data-bind="html: extra_pics" class="title_image article-pix"></div>
+			</div>
+		</div>
+    </div>
+</div>
+

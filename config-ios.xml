@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "co.uk.cactus.NBATrail18"
+        version   = "1.0.2">
+    
+    <!--
+        id for use with iOS:
+            id        = "co.uk.cactus.NBATrail18"
+        id for use with Android:
+            id        = "com.northbristolarts.trail.app"
+    -->
+    
+    <!-- versionCode is optional and is Android only. I think this relates to the internal version number that Android requires to be an integer. This is used to determine version sequence and therefore whether or not a new version constitutes an update. The version value (standard versioning format) is displayed to the user. -->
+
+    <name>NBA Trail 2018</name>
+
+    <description>
+        Welcome to the North Bristol Arts Trail.
+    </description>
+
+    <author href="http://www.cactus.co.uk" email="app_support@cactus.co.uk">
+        Cactus, Bristol, UK
+    </author>
+
+    <platform name="ios" />
+
+	    <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+    <!--preference name="permissions"                value="none"/-->
+
+    <!-- Customize your app and platform with the preference element. -->
+    <preference name="phonegap-version"           value="cli-6.5.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+    <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+    <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+    <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
+    <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+    <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+    
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.3.0" />
+    <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.4.0" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.5.0" />
+    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.4" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~4.3.0" />
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.6.0" />
+    <plugin name="cordova-plugin-media" source="npm" spec="~2.4.0" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.2" />
+    
+    
+
+    <!--allow-navigation href="https://www.google.com/maps/embed/*" /-->
+
+    <!-- Define app icon for each platform. This is a relative path to config.xml.
+        For e.g. if you place an icon.png inside res folder, you should modify the
+        src in the following setting to "res/icon.png" -->
+    <icon src="icon.png" width="1024" height="1024" />
+    <icon src="res/icon/ios/icon-40.png"            gap:platform="ios"        width="40" height="40" />
+    <icon src="res/icon/ios/icon-40-2x.png"         gap:platform="ios"        width="80" height="80" />
+    <icon src="res/icon/ios/icon-40-3x.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="res/icon/ios/icon-60.png"            gap:platform="ios"        width="60" height="60" />
+    <icon src="res/icon/ios/icon-60-2x.png"         gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-60-3x.png"         gap:platform="ios"        width="180" height="180" />
+    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="res/icon/ios/icon-76.png"            gap:platform="ios"        width="76" height="76" />
+    <icon src="res/icon/ios/icon-76-2x.png"         gap:platform="ios"        width="152" height="152" />
+    <icon src="res/icon/ios/icon-83.5-2x.png"       gap:platform="ios"        width="167" height="167" />
+    <icon src="res/icon/ios/icon-120.png"           gap:platform="ios"        width="120" height="120" />
+    <icon src="res/icon/ios/icon-152.png"           gap:platform="ios"        width="152" height="152" />
+    <icon src="res/icon/ios/icon-1024.png"          gap:platform="ios"        width="1024" height="1024" />
+	<!--
+    <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
+    <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+	-->
+
+    <!-- Define app splash screen for each platform. -->
+	
+    
+    <!-- 2017 > 
+    <gap:splash src="res/splash/ios/Default.png"         gap:platform="ios"     width="768" height="1004" />
+	<gap:splash src="res/splash/ios/Default@2x~iphone_640x960.png"         gap:platform="ios"     width="640" height="960" />
+	<gap:splash src="res/splash/ios/Default~iphone.png"         gap:platform="ios"     width="320" height="480" />
+	<gap:splash src="res/splash/ios/Default-568h@2x~iphone_640x1136.png"         gap:platform="ios"     width="640" height="1136" />
+	<gap:splash src="res/splash/ios/Default-750@2x~iphone6-portrait_750x1334.png"         gap:platform="ios"     width="750" height="1334" />
+	<gap:splash src="res/splash/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png"         gap:platform="ios"     width="1242" height="2208" />
+< END 2017 -->
+    
+    <gap:splash src="res/splash/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/splash/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/splash/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="res/splash/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
+    
+    <!--
+    iTunes Connect > MyApps > App Name > Encryption > 
+    If your build is not using encryption, use the key string value in your Info.plist file so you don't have to provide export compliance information with your next build.
+    Info on how to include this was hard to find. I got this solution from http://stackoverflow.com/questions/35966608/adding-custom-parameter-phonegap-build/36496628
+    JMR 2017-05-05
+    -->
+    <!--gap:config-file platform="ios" parent="ITSAppUsesNonExemptEncryption" mode="add">
+        <false/>
+    </gap:config-file-->
+
+    <!--
+        Define access to external domains.
+
+        <access />            - a blank access tag denies access to all external resources.
+        <access origin="*" /> - a wildcard access tag allows access to all external resource.
+
+        Otherwise, you can specify specific domains:
+    -->
+    	<access origin="*" />
+	
+	
+		<feature name="InAppBrowser">
+			<param name="ios-package" value="CDVInAppBrowser" />
+		</feature>
+
+	
+	
+	
+	<!--
+	<preference name="stay-in-webview" value="false" />
+	<feature name="Geolocation">
+	    <param name="ios-package" value="CDVLocation" />
+	</feature>
+	-->
+
+</widget>

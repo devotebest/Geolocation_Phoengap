@@ -1,0 +1,45 @@
+
+<div data-options="dxView : { name: 'artist_list', title: 'Search' } " >
+    <div class="artist_list" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div id="searchForm">
+            <form id="artist_search" action="#" onsubmit="artist_search();return false;">
+                <input type="text" name="searchbox" id="searchbox" placeholder="Artist, medium, street, music, etc&hellip;" />
+                <span id="btnGo" onclick="artist_search();" ><i class="fa fa-search sba_white"></i></span>
+                
+            </form>
+        </div>
+        <div data-bind="dxScrollView: {}">
+            <div data-bind="html: artist_list_html" class="margin-bottom-40"></div>
+            <p>&nbsp;</p>
+		</div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+    var form = document.getElementById("artist_search"); form.addEventListener("submit",function(e){e.preventDefault; return false;});
+    
+    function artist_search() {
+        
+         
+        
+        // Search text
+        var boxval = $("#searchbox").val();
+                
+          // Hide all artist_list_item class element
+          $('.artist_list_item').hide();
+
+          // Search and show
+          $('.artist_list_item:contains("'+boxval+'")').show();
+        
+    }
+    
+    /* Function to make search case-insensitive. */
+    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+      return function( elem ) {
+       return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+      };
+    });
+    
+    
+</script>
+
